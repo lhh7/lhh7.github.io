@@ -6,12 +6,19 @@
 <style>
 h1{text-align: center;}
 p.main{background-color: lightblue;}
-ul {
+ul.daohang {
     list-style-type: none;
     margin: 0;
     padding: 0;
     width: 200px;
     background-color: hsl(46, 59%, 85%);
+}
+
+ul.xialacaidan{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
 }
 
 li a {
@@ -22,13 +29,83 @@ li a {
 }
 
 li a.active {
-    background-color: #4CAF50;
+    background-color: rgb(206, 42, 105);
     color: white;
 }
 
 li a:hover:not(.active) {
     background-color: rgb(206, 42, 105);
     color: white;
+}
+/*下拉菜单*/
+.dropbtn {
+    background-color: rgb(206, 42, 105);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(206, 42, 105);
+    color:white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: rgb(238, 142, 78);
+}
+/*图片廊*/
+div.img {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+div.img:hover {
+    border: 1px solid #777;
+}
+
+div.img img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+/*渐变背景*/
+#yoroll {
+	background-color: #fe9b96; /* 浏览器不支持时显示 */
+    background-image: linear-gradient(#fe9b96, #ffe916);
 }
 </style>
 <!--点击链接会在新窗口打开-->
@@ -38,17 +115,78 @@ li a:hover:not(.active) {
 
 <h1>你好！欢迎来到lhh个人网站</h1>
 <p class="main">网站正在缓慢建设中，主要是用来测试学到的各种功能~</p>
-<p>第一条尝试与sevenation相关！欢迎点击下方链接收听好音乐：</p>
-<a href="https://y.qq.com/n/ryqq/songDetail/0038pxnD3VctGI">It's time</a> </li>
+<div id="yoroll">
+    <p>第一条尝试与sevenation相关！欢迎点击下方链接收听好音乐：</p>
+    <a href="https://y.qq.com/n/ryqq/songDetail/0038pxnD3VctGI">It's time</a> </li>
+</div>
 
 <p class="main">探索导航栏的布局中……</p>
-<ul>
-  <!--<li><a class="active" href="https://lhh7.github.io/">主页</a></li>-->
-  <li><a href="https://lhh7.github.io/">主页</a></li>
+<ul class="daohang">
+  <li><a class="active" href="https://lhh7.github.io/">主页</a></li>
   <li><a href="https://www.bilibili.com/">视频学习网站</a></li>
   <li><a href="https://mubu.com/app">笔记记录</a></li>
   <li><a href="https://www.runoob.com/">菜鸟教程</a></li>
 </ul>
 
+<p class="main">下拉菜单的尝试</p>
+<div class="dropdown" style="float: right;">
+    <!--<span>鼠标移动到这里以触发下拉菜单</span>-->
+    <button class="dropbtn">下拉菜单(右）</button>
+    <div class="dropdown-content"style="right:0;">
+        <a href="https://www.bilibili.com/">视频学习网站</a>
+        <a href="https://mubu.com/app">笔记记录</a>
+        <a href="https://www.runoob.com/">菜鸟教程</a>
+    </div>
+  </div>
+<div class="dropdown" style="float:left;">
+    <button class="dropbtn">下拉菜单（左）</button>
+    <div class="dropdown-content" style="left:0;">
+        <a href="https://www.bilibili.com/">视频学习网站</a>
+        <a href="https://mubu.com/app">笔记记录</a>
+        <a href="https://www.runoob.com/">菜鸟教程</a>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<p class="main">横向导航栏+下拉菜单</p>
+<p>类有点乱……待实现</p>
+<p class="main">图片廊</p>
+<div class="responsive">
+    <div class="img">
+      <a target="_blank" href="//static.runoob.com/images/demo/demo1.jpg">
+        <img src="//static.runoob.com/images/demo/demo1.jpg" alt="图片文本描述" width="300" height="200">
+      </a>
+      <div class="desc">这里添加图片文本描述</div>
+    </div>
+  </div>
+   
+  <div class="responsive">
+    <div class="img">
+      <a target="_blank" href="//static.runoob.com/images/demo/demo2.jpg">
+        <img src="//static.runoob.com/images/demo/demo2.jpg" alt="图片文本描述" width="300" height="200">
+      </a>
+      <div class="desc">这里添加图片文本描述</div>
+    </div>
+  </div>
+   
+  <div class="responsive">
+    <div class="img">
+      <a target="_blank" href="//static.runoob.com/images/demo/demo3.jpg">
+        <img src="//static.runoob.com/images/demo/demo3.jpg" alt="图片文本描述" width="300" height="200">
+      </a>
+      <div class="desc">这里添加图片文本描述</div>
+    </div>
+  </div>
+   
+  <div class="responsive">
+    <div class="img">
+      <a target="_blank" href="//static.runoob.com/images/demo/demo4.jpg">
+        <img src="//static.runoob.com/images/demo/demo4.jpg" alt="图片文本描述" width="300" height="200">
+      </a>
+      <div class="desc">这里添加图片文本描述</div>
+    </div>
+  </div>
+  
 </body>
 </html>
